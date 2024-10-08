@@ -6,29 +6,42 @@ on:
     branches:
       - main
 
+name: deploy
+
+on:
+    push:
+    workflow_dispatch:
+    # schedule:
+        # Runs everyday at 8:00 AM
+        # - cron: "0 0 * * *"
+
 jobs:
-  deploy:
-    runs-on: windows-latest
-    steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-          with:
-              fetch-depth: 0
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+              with:
+                  submodules: true
+                  fetch-depth: 0
 
-        - name: Setup Hugo
-          uses: peaceiris/actions-hugo@v3
-          with:
-              hugo-version: "0.135.0"
-              extended: true
+            - name: Setup Hugo
+              uses: peaceiris/actions-hugo@v2
+              with:
+                  hugo-version: "latest"
+                  extended: true
+                  # 这里最好与本机hugo版本一致，例如：hugo-version: "0.121.2"
+                  # 有时github部署会自动更新hugo版本导致部署失败
+                  # extended来控制是否为扩展版本
 
-        - name: Build Web
-          run: hugo -D
+            - name: Build Web
+              run: hugo
 
-        - name: Deploy Web
-          uses: peaceiris/actions-gh-pages@v4
-          with:
-              PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-              EXTERNAL_REPOSITORY: AnthonyBvvd/AnthonyBvvd.github.io.git
-              PUBLISH_BRANCH: main
-              PUBLISH_DIR: ./public
-              commit_message: auto deploy
+            - name: Deploy Web
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  personal_token: ${{ secrets.PERSONAL_TOKEN }}
+                  external_repository: AnthonyBvvd/AnthonyBvvd.github.io
+                  publish_branch: main
+                  publish_dir: ./public
+                  commit_message: ${{ github.event.head_commit.message }}
