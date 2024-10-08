@@ -1,12 +1,3 @@
----
-title: 1 数值方法A
-slug: 1-numerical-method-a-1d9gps
-url: /post/1-numerical-method-a-1d9gps.html
-date: '2024-09-24 16:38:41+08:00'
-lastmod: '2024-10-08 22:59:13+08:00'
-toc: true
-isCJKLanguage: true
----
 
 # 1 数值方法A
 
@@ -22,11 +13,11 @@ $$
 \underset{\Delta x \to 0}{lim} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}=\frac{dy}{dx}
 $$
 
-​![360albumviewer_imgproc_1712893765](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/images/360albumviewer_imgproc_1712893765-20240924164238-6pripo5.png)  
+​![360albumviewer_imgproc_1712893765](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/360albumviewer_imgproc_1712893765-20240924164238-6pripo5.png)  
 
 不同尺度下物质密度：分子尺度$l_m$<<连续体$\eta$<<地理尺度L（教室、地球...）
 
-​![Screenshot_2024-09-24-16-55-30-031_com.jideos.jnotes](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/images/Screenshot_2024-09-24-16-55-30-031_com.jideos.jnotes-20240924165620-4nfeuh2.png)本课程研究连续体尺度的问题。
+​![Screenshot_2024-09-24-16-55-30-031_com.jideos.jnotes](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/Screenshot_2024-09-24-16-55-30-031_com.jideos.jnotes-20240924165620-4nfeuh2.png)本课程研究连续体尺度的问题。
 
 ### 一维稳态扩散及其求解
 
@@ -78,7 +69,7 @@ $$
     \frac{d}{dx}(\mu \frac{du}{dx})-\frac{dp}{dy}=0
     $$
 
-    ​![Screenshot_2024-09-24-19-47-07-378_com.jideos.jnotes](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/images/Screenshot_2024-09-24-19-47-07-378_com.jideos.jnotes-20240924201738-3kgjj66.png)​
+    ​![Screenshot_2024-09-24-19-47-07-378_com.jideos.jnotes](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/Screenshot_2024-09-24-19-47-07-378_com.jideos.jnotes-20240924201738-3kgjj66.png)​
 
     式中：
 
@@ -99,7 +90,7 @@ $$
 \frac{d}{dx}(\lambda \frac{dT}{dx})+S(x,~T)=0
 $$
 
-​![Screenshot_2024-09-24-20-36-48-831_com.jideos.jnotes](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/images/Screenshot_2024-09-24-20-36-48-831_com.jideos.jnotes-20240924203830-uyywlaj.png)  
+​![Screenshot_2024-09-24-20-36-48-831_com.jideos.jnotes](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/Screenshot_2024-09-24-20-36-48-831_com.jideos.jnotes-20240924203830-uyywlaj.png)  
 式中，$\lambda$为热导率，S代表系统中额外的热源/热汇。
 
 边界条件：若绝热（adiabatic），$\frac{\partial T}{\partial x}=0$。
@@ -116,7 +107,7 @@ $$
 [A][T]=[B]
 $$
 
-​![image](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/images/image-20240924205135-bmsqqog.png)​
+​![image](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/image-20240924205135-bmsqqog.png)​
 
 如图所示，在x=0到x=L的空间内取n个点测温。注意，点1在左边墙上，点n在右边墙上（即边界条件）。
 
@@ -132,7 +123,7 @@ $$
 
 离散化的具体实现：使用有限体积法，将整个域离散为n个控制体积（control volume，CV）。
 
-​![image](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/images/image-20240924221516-z6z1bxe.png)​
+​![image](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/image-20240924221516-z6z1bxe.png)​
 
 原公式如下：
 
@@ -146,9 +137,9 @@ $$
 \int_v \frac{d}{dx}(\lambda \frac{dT}{dx})dV+\int_v S(x,~T)dV=0
 $$
 
-​![Screenshot_2024-09-24-22-27-39-350_com.jideos.jnotes](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/images/Screenshot_2024-09-24-22-27-39-350_com.jideos.jnotes-20240924223221-14ja6kl.png)​
+​![Screenshot_2024-09-24-22-27-39-350_com.jideos.jnotes](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/nullScreenshot_2024-09-24-22-27-39-350_com.jideos.jnotes-20240924223221-14ja6kl.png)​
 
-​![IMG_20240924_223429](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/images/IMG_20240924_223429-20240924223457-zegtbur.jpg)​
+​![IMG_20240924_223429](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/IMG_20240924_223429-20240924223457-zegtbur.jpg)​
 
 参见上图，有$dV=Adx$，则：
 
@@ -158,7 +149,7 @@ $$
 
 这里W意为west，E意为east。
 
-​![Screenshot_2024-09-24-22-37-40-219_com.jideos.jnotes](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/images/Screenshot_2024-09-24-22-37-40-219_com.jideos.jnotes-20240924223754-4lgyahv.png)​
+​![Screenshot_2024-09-24-22-37-40-219_com.jideos.jnotes](https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/nullScreenshot_2024-09-24-22-37-40-219_com.jideos.jnotes-20240924223754-4lgyahv.png)​
 
 如图，设对阴影部分积分。
 
