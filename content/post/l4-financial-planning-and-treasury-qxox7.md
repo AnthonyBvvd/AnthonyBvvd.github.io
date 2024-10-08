@@ -5,7 +5,7 @@
 <h3>财务管理</h3>
 <p>财务管理是在任何企业中，与利润（profit）、费用（expenses）、现金或信用形式的货币流动的计量和记录有关的活动。</p>
 <p>财务管理的目的是安排财务资源，使企业以尽可能最佳的方式实现其目标。</p>
-<p><img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/images/image-20240520231940-90gm4kb.png" alt="image" /></p>
+<p>​<img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/image-20240520231940-90gm4kb.png" alt="image" />​</p>
 <p>财务管理按照财务规划（financial planning）-财务会计（financial accounting）-财务分析（financial analysis）的顺序进行。这与一个企业的生命周期需要一开始就进行规划，并在结束时对发生的事情进行分析的想法相吻合。</p>
 <p>不同的会计：</p>
 <ul>
