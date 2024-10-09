@@ -4,9 +4,9 @@
 <p>主要是针对N-S方程求解，有三种方法：有限体积、有限元、有限差分。</p>
 <p>微分：</p>
 $$\underset{\Delta x \to 0}{lim} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}=\frac{dy}{dx}$$
-<p>​<img src="assets/360albumviewer_imgproc_1712893765-20240924164238-6pripo5.png" alt="360albumviewer_imgproc_1712893765" /></p>
+<p>​<img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/360albumviewer_imgproc_1712893765-20240924164238-6pripo5.png" alt="360albumviewer_imgproc_1712893765" /></p>
 <p>不同尺度下物质密度：分子尺度$l_m$&lt;&lt;连续体$\eta$&lt;&lt;地理尺度L（教室、地球...）</p>
-<p>​<img src="assets/Screenshot_2024-09-24-16-55-30-031_com.jideos.jnotes-20241009204042-p1grqgw.png" alt="Screenshot_2024-09-24-16-55-30-031_com.jideos.jnotes" />​</p>
+<p>​<img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/Screenshot_2024-09-24-16-55-30-031_com.jideos.jnotes-20241009204042-p1grqgw.png" alt="Screenshot_2024-09-24-16-55-30-031_com.jideos.jnotes" />​</p>
 <p>​本课程研究连续体尺度的问题。</p>
 <h3>一维稳态扩散及其求解</h3>
 <h4>一维动量守恒</h4>
@@ -76,7 +76,7 @@ $$\frac{d}{dx}(\mu \frac{du}{dx})-\frac{dp}{dy}=0$$
 <li>公式：</li>
 </ol>
 $$\frac{d}{dx}(\lambda \frac{dT}{dx})+S(x,~T)=0$$
-<p>​<img src="assets/Screenshot_2024-09-24-20-36-48-831_com.jideos.jnotes-20240924203830-uyywlaj.png" alt="Screenshot_2024-09-24-20-36-48-831_com.jideos.jnotes" /><br />
+<p>​<img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/Screenshot_2024-09-24-20-36-48-831_com.jideos.jnotes-20240924203830-uyywlaj.png" alt="Screenshot_2024-09-24-20-36-48-831_com.jideos.jnotes" /><br />
 式中，$\lambda$为热导率，S代表系统中额外的热源/热汇。</p>
 <p>边界条件：若绝热（adiabatic），$\frac{\partial T}{\partial x}=0$。</p>
 <ol start="2">
@@ -89,22 +89,22 @@ $$\left\{\begin{matrix}a_{1,~1}T_1+a_{1,~2}T_2+...+a_{1,~n}T_n
 \end{matrix}\right.\Longrightarrow 
 [A][T]=[B]$$
 <p>在该矩阵中，$a_{i,~j}$表示描述第i个节点的控制方程中，和第j个节点（如左侧$a_{i,~i-1}$、自身$a_{i,~i}$、右侧$a_{i,~i+1}$）相关的系数；[B]表示所有不与温度相关的常数项。</p>
-<p>​<img src="assets/image-20240924205135-bmsqqog.png" alt="image" />​</p>
+<p>​<img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/image-20240924205135-bmsqqog.png" alt="image" />​</p>
 <p>如图所示，在x=0到x=L的空间内取n个点测温。注意，点1在左边墙上，点n在右边墙上（即边界条件）。</p>
 <p>这里有：</p>
 $$\Delta x=\frac{L-0}{n-1}$$$$\frac{dT}{dx}\mid_i~\approx \frac{T_{i+1}-T_i}{\Delta x} \approx \frac{T_{i+1}-T_{i-1}}{2\Delta x}$$
 <p>离散化的具体实现：使用有限体积法，将整个域离散为n个控制体积（control volume，CV）。</p>
-<p>​<img src="assets/image-20241009204123-jdq7352.png" alt="image" />​</p>
+<p>​<img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/image-20241009204123-jdq7352.png" alt="image" />​</p>
 <p>原公式如下：</p>
 $$\frac{d}{dx}(\lambda \frac{dT}{dx})+S(x,~T)=0$$
 <p>根据控制体积，对上式进行积分，则有：</p>
 $$\int_v \frac{d}{dx}(\lambda \frac{dT}{dx})dV+\int_v S(x,~T)dV=0$$
-<p>​<img src="assets/Screenshot_2024-09-24-22-27-39-350_com.jideos.jnotes-20240924223221-14ja6kl.png" alt="Screenshot_2024-09-24-22-27-39-350_com.jideos.jnotes" />​</p>
-<p>​<img src="assets/IMG_20240924_223429-20240924223457-zegtbur.jpg" alt="IMG_20240924_223429" />​</p>
+<p>​<img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/Screenshot_2024-09-24-22-27-39-350_com.jideos.jnotes-20240924223221-14ja6kl.png" alt="Screenshot_2024-09-24-22-27-39-350_com.jideos.jnotes" />​</p>
+<p>​<img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/IMG_20240924_223429-20240924223457-zegtbur.jpg" alt="IMG_20240924_223429" />​</p>
 <p>参见上图，有$dV=Adx$，则：</p>
 $$\int_w^e \frac{d}{dx}(\lambda \frac{dT}{dx})Adx+\int_w^e S(x,~T)Adx=0$$
 <p>这里W意为west，E意为east。</p>
-<p>​<img src="assets/Screenshot_2024-09-24-22-37-40-219_com.jideos.jnotes-20241009204144-uhoijr7.png" alt="Screenshot_2024-09-24-22-37-40-219_com.jideos.jnotes" />​</p>
+<p>​<img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/Screenshot_2024-09-24-22-37-40-219_com.jideos.jnotes-20241009204144-uhoijr7.png" alt="Screenshot_2024-09-24-22-37-40-219_com.jideos.jnotes" />​</p>
 <p>如图，设对阴影部分积分。</p>
 $$\int_a^b f(x)dx=f[a+\xi(b-a)]\cdot(b-a)$$
 <p>其中$\xi$是0~1之间的任意常数。</p>
@@ -134,12 +134,12 @@ $$\quad a_W=-\frac{\lambda_w}{\delta x_w}\quad a_P=\frac{\lambda_w}{\delta x_w}+
 $$a_PT_P+a_ET_E=b,~a_P=1,~a_E=0,~b=T_a\\a_WT_W+a_PT_P=b,~a_P=1,~a_W=0,~b=T_b$$</li>
 <li>
 <p>已知温度随空间变化的导数，描述热流边界条件：<br />
-​<img src="assets/image-20241009205915-4tnhskk.png" alt="image" />如图，定义热通量$q_B=-\lambda \frac{dT}{dx}$。</p>
+​<img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/image-20241009205915-4tnhskk.png" alt="image" />如图，定义热通量$q_B=-\lambda \frac{dT}{dx}$。</p>
 $$(\lambda\frac{dT}{dx})_i-\left(\lambda\frac{dT}{dx}\right)_B+\bar{S}\Delta x_B=0$$
 <p>这里可以把$-\left(\lambda\frac{dT}{dx}\right)_B$这一项用$q_B$代替，于是可推出最后的线性化方程：</p>
 $$a_PT_P+a_ET_E=b,~a_P=\frac{\lambda_e}{\delta x_e}-S_p\Delta x_B,~a_E=-\frac{\lambda_e}{\delta x_e},~\mathrm{b}=S_p\Delta x_B+q_B$$</li>
 </ul>
-<p>​<img src="assets/image-20241009212205-r1d2ivw.png" alt="image" />​</p>
+<p>​<img src="https://raw.githubusercontent.com/AnthonyBvvd/AnthonyBvvd.github.io/main/test/image-20241009212205-r1d2ivw.png" alt="image" />​</p>
 <p>如图，最后得到了一个三对角矩阵。每个节点只影响其左侧一个和右侧一个节点。</p>
 <h4>求解线性方程组</h4>
 <h5>判断解的稳定性</h5>
